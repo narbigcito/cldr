@@ -32,7 +32,7 @@ defmodule Cldr.Config.Dependents do
     if !config.suppress_warnings do
       require Logger
 
-      Logger.warning(
+      Logger.warn(
         "#{inspect(backend)}: No Cldr provider modules were configured. " <>
           "Attempting to configure known Cldr providers."
       )

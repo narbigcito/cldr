@@ -2667,19 +2667,19 @@ defmodule Cldr.Config do
 
     cond do
       !Code.ensure_loaded?(module) ->
-        Logger.warning(
+        Logger.warn(
           "#{inspect(config.backend)}: The CLDR provider module #{inspect(module)} " <>
             "was not found"
         )
 
       !function_exported?(module, function, 1) ->
-        Logger.warning(
+        Logger.warn(
           "#{inspect(config.backend)}: The CLDR provider module #{inspect(module)} " <>
             "does not implement the function #{function}/#{length(args)}"
         )
 
       true ->
-        Logger.warning(
+        Logger.warn(
           "#{inspect(config.backend)}: Could not execute the CLDR provider " <>
             "#{inspect(module)}.#{function}/#{length(args)}"
         )
